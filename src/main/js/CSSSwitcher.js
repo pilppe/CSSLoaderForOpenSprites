@@ -4,14 +4,16 @@ var SSPath; //Initiate variables
 
 CSSSwitcher.setSSPath = function (path) { //Sets the path for the theme folder
 	if(path.charAt(path.length()) == "/"){
-		this.SSPath = path
+		this.SSPath = path;
 	}else{
 		this.SSPath = path + "/"
 	}
-}
+};
 CSSSwitcher.loadDefaultStylesheet = function (theme) {
 	if (theme) {
-		// Code here
+		if ($(get(this.path + theme)).statusCode != 200){
+			//pass
+		}
 	}else{
 		console.error("The theme name input has been left blank, please try again with a valid theme name.");
 	}
